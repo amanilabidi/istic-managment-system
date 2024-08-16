@@ -1,0 +1,335 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: #e4eaed;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    color: #192655;
+}
+
+.header-container h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header-container #current-time {
+    font-weight: 600;
+}
+
+.navigation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15vw;
+    background: #192655;
+}
+
+.nav-list {
+    position: relative;
+    padding: 2rem 0 0;
+    height: calc(100% - 2rem);
+}
+
+.nav-item:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #3c3b3b;
+}
+
+.nav-item a {
+    position: relative;
+    display: block;
+    padding: 1.25rem;
+    color: #fff;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+}
+
+.nav-item a em {
+    transition: all 0.4s;
+    display: block;
+    font-style: normal;
+    padding-left: 0;
+}
+
+.nav-item a::before,
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    top: -30px;
+    border-radius: 50%;
+    background: #192655;
+    box-shadow: 15px 15px 0 0 #eee;
+    display: none;
+}
+
+.nav-item a::after {
+    top: auto;
+    bottom: -30px;
+    box-shadow: 15px -15px 0 0 #eee;
+}
+
+.nav-item a:hover {
+    background: #eee;
+    color: #2d2d2d;
+}
+
+.nav-item a:hover em {
+    padding-left: 0.5rem;
+}
+
+.nav-item a:hover::before,
+.nav-item a:hover::after {
+    display: block;
+}
+
+.main-section {
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.main-section h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #192655;
+    line-height: 1;
+    margin: 0.5 0;
+}
+
+.main-section p {
+    font-size: 1.25rem;
+    color: #585858;
+}
+
+.main-section span {
+    display: block;
+    font-size: 1rem;
+    color: #373737;
+    margin-top: 1.5rem;
+}
+
+/*home part*/
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.7rem;
+}
+
+.element {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.element:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 10px;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front {
+    background: #3498db;
+    transform: rotateY(0deg);
+}
+
+.card .back {
+    background: #AEDEFC;
+    transform: rotateY(180deg);
+    padding-left: 0.5rem;
+}
+
+img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.front h5 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 0.9rem;
+    text-align: left;
+    color: #3c3b3b;
+}
+
+.back h5 {
+    font-size: 1rem;
+    text-align: left;
+    color: #3c3b3b;
+    font-weight: 600;
+}
+
+/* students.css */
+/* ... (existing styles) */
+
+.students-table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.students-table th {
+    background-color: #AEDEFC;
+}
+
+.btn {
+    width: 70px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.red {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+/*form*/
+.formulaire {
+    width: 80%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text],
+input[type=number],
+input[type=date] {
+    width: 100%;
+    height: 45px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid rgb(69, 69, 69);
+    border-radius: 7px;
+    box-sizing: border-box;
+
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=date]:focus {
+    border: 3px solid #3498db;
+}
+
+label {
+    font-size: 1rem;
+    color: #2d2d2d;
+    font-weight: 600;
+    ;
+}
+
+.icon {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+.btns-element{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.submit-btn,.reset-btn{
+    width:40%;
+    height:45px;
+   border-radius: 7px;
+   background-color:#3498db;
+   color:#fff;
+   border:none;
+   font-size: 1.2rem;;
+
+}
+p{
+    margin:0.5rem auto;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js" defer></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title-part">
+        <h1 class="main-title"><span class="firstWord">ISTIC </span>
+            <span class="secondWord">Managment System.</span>
+        </h1>
+    </div>
+    <div class="mains">
+        <main class="box">
+            <span class="border-line"></span>
+            <form method="post" action="login.php"> 
+                <h2>Welcome Admin !</h2>
+                <div class="input-box">
+                    <input type="email" required="required" name="email"> 
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" required="required" name="password"> 
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#">Forgot Password</a>
+                    <a href="#" id="create-account-link">Create Account</a>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </div>
+                <div class="icons-part">
+                    <ul class="socialList">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i></a> </li>
+                    </ul>
+                </div>
+                <div id="qrcode"></div>
+            </form>
+
+        </main>
+        <main class="box hidden">
+            <form class="create-account-form" id="create-account-form" method="post" action="account.php">
+                <h2>Create Account</h2>
+                <div class="input-box">
+                    <input type="text" required="required" name="fullname">
+                    <span>FullName</span>
+                    <i></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" required="required" name="email">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" required="required" id="password" name="password">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" required="required" id="confirm-password" >
+                    <span> Confirm Password</span>
+                    <i></i>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </div>
+                <div class="goBack">
+                    <a href="#" id="goBack"><i class="fa fa-arrow-left"></i></a>
+                </div>
+            </form>
+            
+        </main>
+    </div>
+
+    
+
+    <script>
+        // QR code
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "http://www.istic.rnu.tn/fr/",
+            width: 140,
+            height: 140
+        });
+    </script>
+</body>
+
+</html>
